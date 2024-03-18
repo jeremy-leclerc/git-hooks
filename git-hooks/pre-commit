@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "My commit-msg hook"
+exit 1

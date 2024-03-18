@@ -1,0 +1,11 @@
+{
+  "name": "git-hooks",
+  "version": "1.0.0",
+  "description": "Test example for git hooks",
+  "main": "index.js",
+  "scripts": {
+    "initialize": "cp git-hooks/* .git/hooks/"
+  },
+  "author": "",
+  "license": "ISC"
+}
