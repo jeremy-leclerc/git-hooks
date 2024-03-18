@@ -4,7 +4,7 @@ import sys
 import re
 
 def main():
-    print("Running commit-msg hook...")
+    print("Running commit-msg hook....")
     if len(sys.argv) < 2:
         sys.exit(1)
 
@@ -25,7 +25,7 @@ def main():
     if re.match(pattern, commit_msg):
         print("Commit message format is correct.")
     else:
-        print("Error: Commit message format is incorrect. It should be in the format '[#1234] commit message after the numbers'.")
+        print("Error: Commit message format is incorrect. It should be in the format '[#<xxxx>] <message>'.")
         sys.exit(1)
     print("==========End of commit-msg hook==========")
 if __name__ == "__main__":
