@@ -4,7 +4,7 @@
   "description": "Test example for git hooks",
   "main": "index.js",
   "scripts": {
-    "initialize": "cp git-hooks/* .git/hooks/"
+    "create-hooks": "rm -rf .git/hooks/* && cp git-hooks/* .git/hooks/"
   },
   "author": "",
   "license": "ISC"
