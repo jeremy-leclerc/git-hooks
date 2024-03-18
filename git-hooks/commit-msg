@@ -24,7 +24,7 @@ def main():
     if re.match(pattern, commit_msg):
         sys.exit(0)
     else:
-        print_failure_message("Commit message format is incorrect. It should be in the format '[#<xxxx>] <message>'.")
+        print_failure_message("Commit message should be in the format '[#<xxxx>] <message>'.")
         sys.exit(1)
 
 
