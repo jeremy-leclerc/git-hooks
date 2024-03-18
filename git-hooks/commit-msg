@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+import sys
+import re
+
+'''
+Git hook to validate commit messages in the format "[#<1234>] <commit message>"
+'''
+
+def print_failure_message(msg):
+    fail_colour = '\033[91m'
+    end_colour = '\033[0m'
+    print(fail_colour + msg + end_colour)
+
+def main():
+    if len(sys.argv) < 2:
+        print_failure_message("Received an invalid number of arguments")
+        sys.exit(1)
+
+    commit_msg_file = sys.argv[1]
+    with open(commit_msg_file, 'r') as file:
+        commit_msg = file.read().strip()
+
+    pattern = r"^\[#\d+\] .+"
+    if re.match(pattern, commit_msg):
+        sys.exit(0)
+    else:
+        print_failure_message("Commit message should be in the format '[#<xxxx>] <message>'.")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
