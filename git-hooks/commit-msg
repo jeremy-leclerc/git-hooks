@@ -4,11 +4,12 @@ import sys
 import re
 
 def main():
+    print("Running commit-msg hook...")
     if len(sys.argv) < 2:
-        print("Usage: python validate_commit_message.py <commit_message_file>")
         sys.exit(1)
 
     commit_msg_file = sys.argv[1]
+
 
     with open(commit_msg_file, 'r') as file:
         commit_msg = file.read().strip()
@@ -26,6 +27,6 @@ def main():
     else:
         print("Error: Commit message format is incorrect. It should be in the format '[#1234] commit message after the numbers'.")
         sys.exit(1)
-
+    print("==========End of commit-msg hook==========")
 if __name__ == "__main__":
     main()
